@@ -1,0 +1,13 @@
+SET UP
+Install Node Packages. - npm install (on root directory where package.json is)
+
+
+For DEVELOPMENT:
+Run the app by npm start -s
+
+
+For PRODUCTION:
+Run the app by npm run build -s
+
+
+Note: The -s flag is optional. It enables silent mode which suppresses unnecessary messages during the build.
