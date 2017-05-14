@@ -10,15 +10,15 @@ class SettingPageView extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
   handleChange(event) {
     this.setState({value: event.target.value});
   }
 
   handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.value);
+    this.props.addName(this.state.value)
     event.preventDefault();
   }
-
 
   render() {
     return (
@@ -38,4 +38,9 @@ class SettingPageView extends React.Component {
     );
   }
 }
+
+SettingPageView.propTypes = {
+  addName: PropTypes.func
+}
+
 export default SettingPageView
