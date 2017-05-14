@@ -9,6 +9,6 @@ import {ADD_USERNAME} from './profileActionTypes.js'
 //Action creators are exactly that—functions that create actions
 export function addUserName(userName) {
   return {
-    type: ADD_USERNAME, userName
+    type: ADD_USERNAME, userName //*the action*
   }
 }

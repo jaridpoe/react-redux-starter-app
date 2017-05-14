@@ -12,4 +12,10 @@ class HomePageView extends React.Component {
     );
   }
 }
+
+HomePageView.propTypes = {
+  userName: PropTypes.string
+}
+
+
 export default HomePageView
