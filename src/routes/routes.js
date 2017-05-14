@@ -1,7 +1,7 @@
 import React from 'react'
 import {Route, IndexRoute} from 'react-router'
 import App from '../components/app.js'
-import HomePage from '../components/HomePage/views/HomePageView.js'
+import HomePage from '../components/HomePage/container/HomePageContainer.js'
 import SettingPage from '../components/SettingPage/container/SettingPageContainer.js'
 
 

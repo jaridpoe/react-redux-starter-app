@@ -22,19 +22,25 @@ class SettingPageView extends React.Component {
 
   render() {
     return (
-      <form className="container-fluid">
+      <div className="container-fluid">
 
-        <FormGroup controlId="name">
+        <h1> User Profile </h1>
+        <br />
 
-          <ControlLabel>Name</ControlLabel>
+        <form className="container-fluid">
 
-          <FormControl bsSize="small" value={this.state.userName} onChange={this.handleChange}/>
+          <FormGroup controlId="name">
 
-        </FormGroup>
+            <ControlLabel>Username</ControlLabel>
 
-        <Button bsStyle="primary" onClick={this.handleSubmit}>Submit</Button>
+            <FormControl bsSize="small" value={this.state.userName} onChange={this.handleChange}/>
 
-      </form>
+          </FormGroup>
+
+          <Button bsStyle="primary" onClick={this.handleSubmit}>Submit</Button>
+
+        </form>
+      </div>
     );
   }
 }
