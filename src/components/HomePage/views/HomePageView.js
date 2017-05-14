@@ -5,7 +5,7 @@ class HomePageView extends React.Component {
   render() {
     return (
       <div>
-        HomePage
+        Home Page
       </div>
     );
   }

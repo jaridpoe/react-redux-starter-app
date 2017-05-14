@@ -21,14 +21,15 @@ class NavbarView extends React.Component {
                 <IndexLink to="/" activeClassName="active">Home</IndexLink>
               </li>
               <li>
-                <IndexLink to="/about" activeClassName="active">About</IndexLink>
+                <IndexLink to="/settings" activeClassName="active">Settings</IndexLink>
               </li>
             </ul>
 
             <ul className="nav navbar-nav pull-right">
               <li id="standaloneLogoutButton">
-                <IndexLink to="/" activeClassName="active"> Log
-                  Out</IndexLink>
+                <IndexLink to="/" activeClassName="active">
+                  Log Out
+                </IndexLink>
               </li>
             </ul>
 
