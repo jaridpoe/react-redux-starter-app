@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux'
-import {settingReducer} from '../components/SettingPage/redux/settingReducer.js'
+import {profileReducer} from '../components/SettingPage/redux/profileReducer.js'
 
 const appReducer = combineReducers({
-  settingReducer
+  profileReducer
 });
 
 

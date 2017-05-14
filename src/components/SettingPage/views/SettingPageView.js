@@ -5,18 +5,18 @@ class SettingPageView extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {value: ''};
+    this.state = {userName: ''};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value});
+    this.setState({userName: event.target.value});
   }
 
   handleSubmit(event) {
-    this.props.addName(this.state.value)
+    this.props.addUserName(this.state.userName)
     event.preventDefault();
   }
 
@@ -28,7 +28,7 @@ class SettingPageView extends React.Component {
 
           <ControlLabel>Name</ControlLabel>
 
-          <FormControl bsSize="small" value={this.state.value} onChange={this.handleChange}/>
+          <FormControl bsSize="small" value={this.state.userName} onChange={this.handleChange}/>
 
         </FormGroup>
 
@@ -40,7 +40,7 @@ class SettingPageView extends React.Component {
 }
 
 SettingPageView.propTypes = {
-  addName: PropTypes.func
+  addUserName: PropTypes.func
 }
 
 export default SettingPageView

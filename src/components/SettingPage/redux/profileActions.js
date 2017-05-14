@@ -4,11 +4,12 @@
  (Actions describe something has happened)
  */
 
-import {ADD_NAME} from './settingActionTypes.js'
+import {ADD_USERNAME} from './profileActionTypes.js'
 
 //Action creators are exactly that—functions that create actions
-export function addName(name) {
+export function addUserName(userName) {
+  debugger
   return {
-    type: ADD_NAME, name
+    type: ADD_USERNAME, userName
   }
 }
