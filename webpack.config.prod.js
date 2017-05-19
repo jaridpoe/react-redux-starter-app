@@ -32,7 +32,7 @@ module.exports = {
     rules: [
       {test: /\.js$/, exclude: [/node_modules/], use: 'babel-loader'},
       {test: /\.css$/, use: ExtractTextPlugin.extract({fallback: "style-loader", use: "css-loader"})},
-      {test: /\.eot$|\.svg$|\.woff$|\.woff2|.ttf$/, use: 'file-loader'}
+      {test: /\.eot$|\.svg$|\.woff$|\.woff2|.ttf$/, use: 'url-loader'}
     ]
   }
 };

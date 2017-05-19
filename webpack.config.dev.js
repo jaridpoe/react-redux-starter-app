@@ -23,7 +23,7 @@ module.exports = {
     rules: [
       {test: /\.js$/, exclude: [/node_modules/], use: 'babel-loader'},
       {test: /(\.css)$/, use: ['style-loader', 'css-loader']},
-      {test: /\.eot$|\.svg$|\.woff$|\.woff2|.ttf$/, use: 'file-loader'}
+      {test: /\.eot$|\.svg$|\.woff$|\.woff2|.ttf$/, use: 'url-loader'}
     ]
   }
 };
