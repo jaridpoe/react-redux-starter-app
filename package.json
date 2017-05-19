@@ -11,8 +11,7 @@
     "lint:watch": "npm run lint -- --watch",
     "clean-dist": "npm run remove-dist && mkdir dist",
     "remove-dist": "node_modules/.bin/rimraf ./dist",
-    "build:html": "babel-node tools/buildHtml.js",
-    "prebuild": "npm-run-all clean-dist lint build:html",
+    "prebuild": "npm-run-all clean-dist lint",
     "build": "babel-node tools/build.js",
     "postbuild": "babel-node tools/distServer.js"
   },
@@ -54,6 +53,7 @@
     "extract-text-webpack-plugin": "2.1.0",
     "file-loader": "0.11.1",
     "flow-bin": "0.42.0",
+    "html-webpack-plugin": "^2.28.0",
     "npm-run-all": "4.0.2",
     "open": "0.0.5",
     "react-scripts": "0.9.5",

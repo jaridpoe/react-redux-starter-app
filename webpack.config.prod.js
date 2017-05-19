@@ -1,6 +1,6 @@
 import webpack from 'webpack';
-import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 const GLOBALS = {
   'process.env.NODE_ENV': JSON.stringify('production')
@@ -21,8 +21,12 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin(GLOBALS), //sets react for production for performance reasons
     new ExtractTextPlugin('styles.css'), //extracts our css to a separate file
-    new webpack.optimize.DedupePlugin(), //eliminates duplicate packages in our final bundle to help our bundle size as small as possible
-    new webpack.optimize.UglifyJsPlugin // minifies our javascript
+    new webpack.optimize.UglifyJsPlugin, // minifies our javascript
+    new HtmlWebpackPlugin({
+      filename: './index.html',
+      template: './src/index.prod.html'
+
+    })
   ],
   module: {
     rules: [
