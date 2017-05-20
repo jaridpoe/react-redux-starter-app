@@ -12,7 +12,7 @@ class HomePageView extends React.Component {
           </p>
           <br/>
           <p>
-            My full name is ???
+            My full name is {this.props.fullName}
           </p>
         </h1>
 
@@ -22,7 +22,9 @@ class HomePageView extends React.Component {
 }
 
 HomePageView.propTypes = {
-  firstName: PropTypes.string
+  firstName: PropTypes.string,
+  lastName: PropTypes.string,
+  fullName: PropTypes.string
 }
 
 

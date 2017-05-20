@@ -13,7 +13,7 @@ const defaultProfile = {
   lastName: 'Baggins'
 }
 
-export function profileReducer(state = defaultProfile, action) {
+export function profile(state = defaultProfile, action) {
   switch (action.type) {
     case ADD_FIRST_NAME:
       return {...state, 'firstName': action.firstName}

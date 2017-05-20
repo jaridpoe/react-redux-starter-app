@@ -3,6 +3,14 @@ import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import SettingPageView from '../views/SettingPageView.js'
 
+function mapStateToProps(state) {
+  return {
+    firstName: state.profile.firstName,
+    lastName: state.profile.lastName
+  }
+}
+
+
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     addFirstName,
@@ -10,7 +18,7 @@ function mapDispatchToProps(dispatch) {
   }, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(SettingPageView)
+export default connect(mapStateToProps, mapDispatchToProps)(SettingPageView)
 
 
 /*

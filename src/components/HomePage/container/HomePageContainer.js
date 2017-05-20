@@ -1,10 +1,12 @@
 import {connect} from 'react-redux'
 import HomePageView from '../views/HomePageView.js'
+import FullName from '../../../selectors/getFullNameSelector.js'
 
 function mapStateToProps(state) {
   return {
-    firstName: state.profileReducer.firstName,
-    lastName: state.profileReducer.lastName
+    firstName: state.profile.firstName,
+    lastName: state.profile.lastName,
+    fullName: FullName(state) // selector
   }
 }
 

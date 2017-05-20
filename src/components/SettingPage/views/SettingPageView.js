@@ -8,8 +8,8 @@ class SettingPageView extends React.Component {
     super(props);
 
     this.state = {
-      firstName: '',
-      lastName: ''
+      firstName: props.firstName,
+      lastName: props.lastName
     };
 
     this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
@@ -22,7 +22,7 @@ class SettingPageView extends React.Component {
     this.setState({firstName: event.target.value});
   }
 
-  handleLastNameChange(event){
+  handleLastNameChange(event) {
     this.setState({lastName: event.target.value})
   }
 
@@ -61,7 +61,9 @@ class SettingPageView extends React.Component {
 
 SettingPageView.propTypes = {
   addFirstName: PropTypes.func,
-  addLastName: PropTypes.func
+  addLastName: PropTypes.func,
+  lastName: PropTypes.string,
+  firstName: PropTypes.string
 }
 
 export default SettingPageView

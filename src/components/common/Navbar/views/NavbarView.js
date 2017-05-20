@@ -25,14 +25,6 @@ class NavbarView extends React.Component {
               </li>
             </ul>
 
-            <ul className="nav navbar-nav pull-right">
-              <li id="standaloneLogoutButton">
-                <IndexLink to="/" activeClassName="active">
-                  Log Out
-                </IndexLink>
-              </li>
-            </ul>
-
           </div>
         </nav>
       </header>
