@@ -9,12 +9,12 @@ import * as types from './profileActionTypes.js'
 //Action creators are exactly that—functions that create actions
 export function addFirstName(firstName) {
   return {
-    type: types.ADD_FIRST_NAME, firstName //*the action*
+    type: types.MODIFY_FIRST_NAME, firstName //*the action*
   }
 }
 
 export function addLastName(lastName){
   return {
-    type: types.ADD_LAST_NAME, lastName
+    type: types.MODIFY_LAST_NAME, lastName
   }
 }
