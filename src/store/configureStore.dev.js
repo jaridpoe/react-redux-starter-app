@@ -3,6 +3,12 @@ import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import thunk from 'redux-thunk';
 import appReducer from './appReducer.js';
 
+/*
+
+The store holds the whole state tree. Think of the store as a pie chart and each slice is a reducer
+
+ */
+
 
 export default function configureStore() {
 

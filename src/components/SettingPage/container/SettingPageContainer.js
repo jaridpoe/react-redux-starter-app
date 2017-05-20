@@ -28,6 +28,4 @@ export default connect(mapStateToProps, mapDispatchToProps)(SettingPageView)
  An object with the same function names, but with every action creator wrapped into a dispatch call so
  they may be invoked directly, will be merged into the component’s props
 
- (If you don't want to subscribe to store updates, pass null or undefined in place of mapStateToProps)
-
  */

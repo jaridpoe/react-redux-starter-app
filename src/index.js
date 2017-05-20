@@ -10,8 +10,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 /*
 
- Provider makes the Redux store available to the connect() calls in the component hierarchy below.
- Store is the single Redux store in your application.
+ Provider makes the Redux store available to your containers (It makes your components 'smart')
 
  */
 
