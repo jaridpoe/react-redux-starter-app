@@ -6,16 +6,19 @@
 
  */
 
-import {ADD_USERNAME} from './profileActionTypes.js'
+import {ADD_FIRST_NAME, ADD_LAST_NAME} from './profileActionTypes.js'
 
 const defaultProfile = {
-  userName: 'Jarid'
+  firstName: 'Frodo',
+  lastName: 'Baggins'
 }
 
 export function profileReducer(state = defaultProfile, action) {
   switch (action.type) {
-    case ADD_USERNAME:
-      return {...state, 'userName': action.userName}
+    case ADD_FIRST_NAME:
+      return {...state, 'firstName': action.firstName}
+    case ADD_LAST_NAME:
+      return {...state, 'lastName': action.lastName}
     default:
       return state
   }

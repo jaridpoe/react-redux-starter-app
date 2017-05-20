@@ -4,19 +4,31 @@ import {FormGroup, ControlLabel, FormControl, Button} from 'react-bootstrap'
 class SettingPageView extends React.Component {
 
   constructor(props) {
-    super(props);
-    this.state = {userName: ''};
 
-    this.handleChange = this.handleChange.bind(this);
+    super(props);
+
+    this.state = {
+      firstName: '',
+      lastName: ''
+    };
+
+    this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
+    this.handleLastNameChange = this.handleLastNameChange.bind(this);
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({userName: event.target.value});
+  handleFirstNameChange(event) {
+    this.setState({firstName: event.target.value});
+  }
+
+  handleLastNameChange(event){
+    this.setState({lastName: event.target.value})
   }
 
   handleSubmit(event) {
-    this.props.addUserName(this.state.userName)
+    this.props.addFirstName(this.state.firstName)
+    this.props.addLastName(this.state.lastName)
     event.preventDefault();
   }
 
@@ -31,9 +43,11 @@ class SettingPageView extends React.Component {
 
           <FormGroup controlId="name">
 
-            <ControlLabel>Username</ControlLabel>
+            <ControlLabel>First Name</ControlLabel>
+            <FormControl bsSize="small" value={this.state.firstName} onChange={this.handleFirstNameChange}/>
 
-            <FormControl bsSize="small" value={this.state.userName} onChange={this.handleChange}/>
+            <ControlLabel>Last Name</ControlLabel>
+            <FormControl bsSize="small" value={this.state.lastName} onChange={this.handleLastNameChange}/>
 
           </FormGroup>
 
@@ -46,7 +60,8 @@ class SettingPageView extends React.Component {
 }
 
 SettingPageView.propTypes = {
-  addUserName: PropTypes.func
+  addFirstName: PropTypes.func,
+  addLastName: PropTypes.func
 }
 
 export default SettingPageView

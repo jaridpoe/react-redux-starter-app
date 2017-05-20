@@ -6,7 +6,15 @@ class HomePageView extends React.Component {
     return (
       <div className="container-fluid">
 
-        <h1>Hi, my name is {this.props.userName}. (* ^ ω ^)	</h1>
+        <h1>
+          <p>
+            My first name is {this.props.firstName} and my last name is {this.props.lastName}.
+          </p>
+          <br/>
+          <p>
+            My full name is ???
+          </p>
+        </h1>
 
       </div>
     );
@@ -14,7 +22,7 @@ class HomePageView extends React.Component {
 }
 
 HomePageView.propTypes = {
-  userName: PropTypes.string
+  firstName: PropTypes.string
 }
 
 

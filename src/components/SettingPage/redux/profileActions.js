@@ -4,11 +4,17 @@
  (Actions describe something has happened)
  */
 
-import {ADD_USERNAME} from './profileActionTypes.js'
+import * as types from './profileActionTypes.js'
 
 //Action creators are exactly that—functions that create actions
-export function addUserName(userName) {
+export function addFirstName(firstName) {
   return {
-    type: ADD_USERNAME, userName //*the action*
+    type: types.ADD_FIRST_NAME, firstName //*the action*
+  }
+}
+
+export function addLastName(lastName){
+  return {
+    type: types.ADD_LAST_NAME, lastName
   }
 }

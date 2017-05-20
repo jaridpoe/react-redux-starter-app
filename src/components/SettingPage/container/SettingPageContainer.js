@@ -1,11 +1,12 @@
-import {addUserName} from '../redux/profileActions.js'
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+import {addFirstName, addLastName} from '../redux/profileActions.js'
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
 import SettingPageView from '../views/SettingPageView.js'
 
-function mapDispatchToProps(dispatch){
+function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    addUserName
+    addFirstName,
+    addLastName
   }, dispatch)
 }
 
@@ -16,9 +17,9 @@ export default connect(null, mapDispatchToProps)(SettingPageView)
 
  mapDispatchToProps:
  If an object is passed, each function inside it is assumed to be a Redux action creator.
-  An object with the same function names, but with every action creator wrapped into a dispatch call so
-  they may be invoked directly, will be merged into the component’s props
+ An object with the same function names, but with every action creator wrapped into a dispatch call so
+ they may be invoked directly, will be merged into the component’s props
 
-  (If you don't want to subscribe to store updates, pass null or undefined in place of mapStateToProps)
+ (If you don't want to subscribe to store updates, pass null or undefined in place of mapStateToProps)
 
  */

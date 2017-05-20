@@ -3,7 +3,8 @@ import HomePageView from '../views/HomePageView.js'
 
 function mapStateToProps(state) {
   return {
-    userName: state.profileReducer.userName
+    firstName: state.profileReducer.firstName,
+    lastName: state.profileReducer.lastName
   }
 }
 
