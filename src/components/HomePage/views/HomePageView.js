@@ -6,7 +6,7 @@ class HomePageView extends React.Component {
     return (
       <div className="container-fluid">
 
-        <h1>
+        <h2>
           <p>
             First name: {this.props.firstName}
             <br />
@@ -16,7 +16,7 @@ class HomePageView extends React.Component {
           <p>
             Full name: {this.props.fullName}
           </p>
-        </h1>
+        </h2>
 
       </div>
     );
