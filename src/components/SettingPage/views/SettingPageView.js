@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
-import {FormGroup, ControlLabel, FormControl, Button} from 'react-bootstrap'
+import {Button} from 'react-bootstrap'
+import {FieldGroup} from '../../custom/FieldGroup.js'
 
 class SettingPageView extends React.Component {
 
@@ -21,8 +22,7 @@ class SettingPageView extends React.Component {
   }
 
 
-  handleSubmit(event) {
-
+  handleSubmit() {
     if (this.props.firstName !== this.state.firstName) {
       this.props.addFirstName(this.state.firstName)
     }
@@ -30,9 +30,8 @@ class SettingPageView extends React.Component {
     if (this.props.lastName !== this.state.lastName) {
       this.props.addLastName(this.state.lastName)
     }
-
-    event.preventDefault();
   }
+
 
   render() {
     return (
@@ -43,15 +42,8 @@ class SettingPageView extends React.Component {
 
         <form className="container-fluid">
 
-          <FormGroup controlId="firstName">
-            <ControlLabel>First Name</ControlLabel>
-            <FormControl bsSize="small" value={this.state.firstName} onChange={this.handleChange}/>
-          </FormGroup>
-
-          <FormGroup controlId="lastName">
-            <ControlLabel>Last Name</ControlLabel>
-            <FormControl bsSize="small" value={this.state.lastName} onChange={this.handleChange}/>
-          </FormGroup>
+          <FieldGroup id="firstName" type="text" label="First Name" value={this.state.firstName} onChange={this.handleChange}/>
+          <FieldGroup id="lastName" type="text" label="Last Name" value={this.state.lastName} onChange={this.handleChange}/>
 
           <Button bsStyle="primary" onClick={this.handleSubmit}>Submit</Button>
 
