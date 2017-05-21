@@ -27,8 +27,15 @@ class SettingPageView extends React.Component {
   }
 
   handleSubmit(event) {
-    this.props.addFirstName(this.state.firstName)
-    this.props.addLastName(this.state.lastName)
+
+    if(this.props.firstName !== this.state.firstName){
+      this.props.addFirstName(this.state.firstName)
+    }
+
+    if(this.props.lastName !== this.state.lastName){
+      this.props.addLastName(this.state.lastName)
+    }
+
     event.preventDefault();
   }
 
