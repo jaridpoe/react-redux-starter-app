@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import {FormGroup, ControlLabel, FormControl, HelpBlock} from 'react-bootstrap'
 
 
-export function FieldGroup({id, label, help, ...props}) {
+export function FormInput({id, label, help, ...props}) {
   return (
     <FormGroup controlId={id}>
       <ControlLabel>{label}</ControlLabel>
@@ -12,7 +12,7 @@ export function FieldGroup({id, label, help, ...props}) {
   );
 }
 
-FieldGroup.propTypes = {
+FormInput.propTypes = {
   id: PropTypes.string,
   label: PropTypes.string,
   help: PropTypes.string

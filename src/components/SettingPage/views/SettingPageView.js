@@ -1,6 +1,6 @@
 import React, {PropTypes} from 'react';
 import {Button} from 'react-bootstrap'
-import {FieldGroup} from '../../custom/FieldGroup.js'
+import {FormInput} from '../../common/FormControl/views/FormInput.js'
 
 class SettingPageView extends React.Component {
 
@@ -42,8 +42,8 @@ class SettingPageView extends React.Component {
 
         <form className="container-fluid">
 
-          <FieldGroup id="firstName" type="text" label="First Name" value={this.state.firstName} onChange={this.handleChange}/>
-          <FieldGroup id="lastName" type="text" label="Last Name" value={this.state.lastName} onChange={this.handleChange}/>
+          <FormInput id="firstName" type="text" label="First Name" value={this.state.firstName} onChange={this.handleChange}/>
+          <FormInput id="lastName" type="text" label="Last Name" value={this.state.lastName} onChange={this.handleChange}/>
 
           <Button bsStyle="primary" onClick={this.handleSubmit}>Submit</Button>
 
