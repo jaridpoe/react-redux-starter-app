@@ -12,27 +12,22 @@ class SettingPageView extends React.Component {
       lastName: props.lastName
     };
 
-    this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
-    this.handleLastNameChange = this.handleLastNameChange.bind(this);
-
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleFirstNameChange(event) {
-    this.setState({firstName: event.target.value});
+  handleChange(event) {
+    this.setState({[event.target.id]: event.target.value})
   }
 
-  handleLastNameChange(event) {
-    this.setState({lastName: event.target.value})
-  }
 
   handleSubmit(event) {
 
-    if(this.props.firstName !== this.state.firstName){
+    if (this.props.firstName !== this.state.firstName) {
       this.props.addFirstName(this.state.firstName)
     }
 
-    if(this.props.lastName !== this.state.lastName){
+    if (this.props.lastName !== this.state.lastName) {
       this.props.addLastName(this.state.lastName)
     }
 
@@ -48,14 +43,14 @@ class SettingPageView extends React.Component {
 
         <form className="container-fluid">
 
-          <FormGroup controlId="name">
-
+          <FormGroup controlId="firstName">
             <ControlLabel>First Name</ControlLabel>
-            <FormControl bsSize="small" value={this.state.firstName} onChange={this.handleFirstNameChange}/>
+            <FormControl bsSize="small" value={this.state.firstName} onChange={this.handleChange}/>
+          </FormGroup>
 
+          <FormGroup controlId="lastName">
             <ControlLabel>Last Name</ControlLabel>
-            <FormControl bsSize="small" value={this.state.lastName} onChange={this.handleLastNameChange}/>
-
+            <FormControl bsSize="small" value={this.state.lastName} onChange={this.handleChange}/>
           </FormGroup>
 
           <Button bsStyle="primary" onClick={this.handleSubmit}>Submit</Button>
