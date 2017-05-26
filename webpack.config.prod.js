@@ -24,7 +24,7 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin, // minifies our javascript
     new HtmlWebpackPlugin({
       filename: './index.html',
-      template: './src/index.prod.html'
+      template: './src/tools/index.template.ejs'
 
     })
   ],
