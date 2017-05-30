@@ -13,7 +13,7 @@ export function addFirstName(firstName) {
   }
 }
 
-export function addLastName(lastName){
+export function addLastName(lastName) {
   return {
     type: types.MODIFY_LAST_NAME, lastName
   }
