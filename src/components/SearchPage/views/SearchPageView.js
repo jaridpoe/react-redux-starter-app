@@ -9,7 +9,7 @@ class SearchPageView extends React.Component {
     super(props);
 
     this.state = {
-      gitHubUsername: props.gitHubUsername
+      gitHubUsername: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -23,39 +23,46 @@ class SearchPageView extends React.Component {
 
   handleSubmit() {
     if (this.props.gitHubUsername !== this.state.gitHubUsername) {
-      this.props.searchGitHubUsername(this.state.gitHubUsername)
+      this.props.searchGitHubAccount(this.state.gitHubUsername)
     }
-
   }
 
 
   render() {
     return (
       <div className="container-fluid">
+        <div className="row">
+          <div className="col-md-6">
 
-        <h1> GitHub Search</h1>
-        <br />
+            <h1> GitHub Search</h1>
+            <br />
 
-        <form className="container-fluid">
+            <form className="form-inline">
+              <FormInput id="gitHubUsername"
+                         placeholder="Enter username"
+                         type="text"
+                         label="GitHub Username: "
+                         value={this.state.gitHubUsername}
+                         onChange={this.handleChange}/>
 
-          <FormInput id="gitHubUsername"
-                     type="text"
-                     label="GitHub Username"
-                     value={this.state.gitHubUsername}
-                     onChange={this.handleChange}/>
+              <Button bsStyle="default" onClick={this.handleSubmit}>Search</Button>
+            </form>
+          </div>
 
-          <Button bsStyle="primary" onClick={this.handleSubmit}>Submit</Button>
+          <div className="col-md-6">
+            <img src={this.props.gitHub.avatarUrl} className="img-thumbnail avatar-image center-block"/>
+          </div>
 
-        </form>
+        </div>
       </div>
     );
   }
 }
 
 SearchPageView.propTypes = {
-  searchGitHubUsername: PropTypes.func,
-
-  gitHubUsername: PropTypes.string
+  searchGitHubAccount: PropTypes.func,
+  gitHubUsername: PropTypes.string,
+  gitHub: PropTypes.object
 }
 
 export default SearchPageView

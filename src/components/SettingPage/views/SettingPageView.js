@@ -40,21 +40,29 @@ class SettingPageView extends React.Component {
         <h1> User Profile</h1>
         <br />
 
-        <form className="container-fluid">
+        <form className="form-inline">
 
           <FormInput id="firstName"
                      type="text"
-                     label="First Name"
+                     label="First Name: "
                      value={this.state.firstName}
                      onChange={this.handleChange}/>
 
+          <br />
+          <br />
+
+
           <FormInput id="lastName"
                      type="text"
-                     label="Last Name"
+                     label="Last Name: "
                      value={this.state.lastName}
                      onChange={this.handleChange}/>
 
-          <Button bsStyle="primary" onClick={this.handleSubmit}>Submit</Button>
+          <br />
+          <br />
+
+
+          <Button bsStyle="default" onClick={this.handleSubmit}>Save</Button>
 
         </form>
       </div>

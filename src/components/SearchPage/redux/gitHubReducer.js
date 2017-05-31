@@ -8,20 +8,18 @@
 
 import * as types from './gitHubActionTypes.js'
 
-
-const defaultProfile = {
-  'gitHubUsername': '',
-  'statusCode': ''
+const defaultGitHub = {
+  'avatarUrl': '',
+  'statusText': ''
 }
 
-export function gitHubAccount(state = defaultProfile, action) {
+export function gitHubAccount(state = defaultGitHub, action) {
   switch (action.type) {
     case types.FETCH_GITHUB_SEARCH_SUCCESS:
-      return {...state, 'gitHubUsername': action.gitHubAccount.login, 'statusCode': 'Found'}
+      return {...state, 'avatarUrl': action.gitHubAccount.data.avatar_url, 'statusText': action.gitHubAccount.statusText}
     case types.FETCH_GITHUB_SEARCH_FAILURE:
-      return {...state, 'statusCode': action.error.response.statusText}
+      return {...state, 'statusText': action.error.response.statusText}
     default:
       return state
   }
 }
-

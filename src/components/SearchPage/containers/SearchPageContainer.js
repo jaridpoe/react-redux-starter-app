@@ -1,18 +1,18 @@
-import {searchGitHubUsername} from '../redux/gitHubActions.js'
+import {searchGitHubAccount} from '../redux/gitHubActions.js'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import SearchPageView from '../views/SearchPageView.js'
 
 function mapStateToProps(state) {
   return {
-    gitHubUsername: state.profile.gitHubUsername
+    gitHub: state.gitHubAccount
   }
 }
 
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    searchGitHubUsername
+    searchGitHubAccount
   }, dispatch)
 }
 
