@@ -21,6 +21,9 @@ class NavbarView extends React.Component {
                 <IndexLink to="/" activeClassName="active">Home</IndexLink>
               </li>
               <li>
+                <IndexLink to="/search" activeClassName="active">Search</IndexLink>
+              </li>
+              <li>
                 <IndexLink to="/settings" activeClassName="active">Settings</IndexLink>
               </li>
             </ul>

@@ -3,20 +3,21 @@ import React, {PropTypes} from 'react';
 class HomePageView extends React.Component {
 
   render() {
+    ``
     return (
       <div className="container-fluid">
 
-        <h2>
-          <p>
-            First name: {this.props.firstName}
-            <br />
-            Last name: {this.props.lastName}
-          </p>
-          <br/>
-          <p>
-            Full name: {this.props.fullName}
-          </p>
-        </h2>
+        <h1>Home</h1>
+
+        <p>
+          First name: {this.props.firstName}
+          <br />
+          Last name: {this.props.lastName}
+        </p>
+        <br/>
+        <p>
+          Full name: {this.props.fullName}
+        </p>
 
       </div>
     );

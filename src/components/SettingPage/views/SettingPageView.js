@@ -10,7 +10,7 @@ class SettingPageView extends React.Component {
 
     this.state = {
       firstName: props.firstName,
-      lastName: props.lastName
+      lastName: props.lastName,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -37,15 +37,32 @@ class SettingPageView extends React.Component {
     return (
       <div className="container-fluid">
 
-        <h1> User Profile </h1>
+        <h1> User Profile</h1>
         <br />
 
-        <form className="container-fluid">
+        <form className="form-inline">
 
-          <FormInput id="firstName" type="text" label="First Name" value={this.state.firstName} onChange={this.handleChange}/>
-          <FormInput id="lastName" type="text" label="Last Name" value={this.state.lastName} onChange={this.handleChange}/>
+          <FormInput id="firstName"
+                     type="text"
+                     label="First Name: "
+                     value={this.state.firstName}
+                     onChange={this.handleChange}/>
 
-          <Button bsStyle="primary" onClick={this.handleSubmit}>Submit</Button>
+          <br />
+          <br />
+
+
+          <FormInput id="lastName"
+                     type="text"
+                     label="Last Name: "
+                     value={this.state.lastName}
+                     onChange={this.handleChange}/>
+
+          <br />
+          <br />
+
+
+          <Button bsStyle="default" onClick={this.handleSubmit}>Save</Button>
 
         </form>
       </div>
@@ -56,8 +73,9 @@ class SettingPageView extends React.Component {
 SettingPageView.propTypes = {
   addFirstName: PropTypes.func,
   addLastName: PropTypes.func,
+
   lastName: PropTypes.string,
-  firstName: PropTypes.string
+  firstName: PropTypes.string,
 }
 
 export default SettingPageView

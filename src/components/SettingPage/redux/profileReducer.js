@@ -6,18 +6,19 @@
 
  */
 
-import {MODIFY_FIRST_NAME, MODIFY_LAST_NAME} from './profileActionTypes.js'
+import * as types from './profileActionTypes.js'
+
 
 const defaultProfile = {
-  firstName: 'Frodo',
-  lastName: 'Baggins'
+  firstName: 'Jarid',
+  lastName: 'Poe'
 }
 
 export function profile(state = defaultProfile, action) {
   switch (action.type) {
-    case MODIFY_FIRST_NAME:
+    case types.MODIFY_FIRST_NAME:
       return {...state, 'firstName': action.firstName}
-    case MODIFY_LAST_NAME:
+    case types.MODIFY_LAST_NAME:
       return {...state, 'lastName': action.lastName}
     default:
       return state
