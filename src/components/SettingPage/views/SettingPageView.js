@@ -1,6 +1,4 @@
 import React, {PropTypes} from 'react';
-import {Button} from 'react-bootstrap'
-import {FormInput} from '../../common/FormControl/views/FormInput.js'
 
 class SettingPageView extends React.Component {
 
@@ -11,6 +9,7 @@ class SettingPageView extends React.Component {
     this.state = {
       firstName: props.firstName,
       lastName: props.lastName,
+      birthDate: props.birthDate
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -22,7 +21,7 @@ class SettingPageView extends React.Component {
   }
 
 
-  handleSubmit() {
+  handleSubmit(event) {
     if (this.props.firstName !== this.state.firstName) {
       this.props.addFirstName(this.state.firstName)
     }
@@ -30,6 +29,12 @@ class SettingPageView extends React.Component {
     if (this.props.lastName !== this.state.lastName) {
       this.props.addLastName(this.state.lastName)
     }
+
+    if (this.props.birthDate !== this.state.birthDate) {
+      this.props.addBirthDate(this.state.birthDate)
+    }
+
+    event.preventDefault()
   }
 
 
@@ -38,33 +43,59 @@ class SettingPageView extends React.Component {
       <div className="container-fluid">
 
         <h1> User Profile</h1>
-        <br />
 
-        <form className="form-inline">
+        <fieldset>
 
-          <FormInput id="firstName"
-                     type="text"
-                     label="First Name: "
+          <lengend>
+            <h3>Person Information</h3>
+          </lengend>
+
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              First name:
+              <input type="text"
+                     id="firstName"
+                     maxLength="12"
+                     className="form-control"
                      value={this.state.firstName}
-                     onChange={this.handleChange}/>
+                     onChange={this.handleChange}
+                     required="required"/>
+            </label>
 
-          <br />
-          <br />
+            {" "}
 
-
-          <FormInput id="lastName"
-                     type="text"
-                     label="Last Name: "
+            <label>
+              Last name:
+              <input type="text"
+                     id="lastName"
+                     maxLength="15"
+                     className="form-control"
                      value={this.state.lastName}
-                     onChange={this.handleChange}/>
+                     onChange={this.handleChange}
+                     required="required"/>
+            </label>
 
-          <br />
-          <br />
+            <br />
+            <br />
+
+            <label>
+              Birth date:
+              <input type="date"
+                     className="form-control"
+                     id="birthDate"
+                     onChange={this.handleChange}
+                     required="required"/>
+            </label>
 
 
-          <Button bsStyle="default" onClick={this.handleSubmit}>Save</Button>
+            <br />
+            <br />
 
-        </form>
+            <button className="form-control">
+              <span className="glyphicon glyphicon-ok"/> Save
+            </button>
+          </form>
+        </fieldset>
       </div>
     );
   }
@@ -73,9 +104,11 @@ class SettingPageView extends React.Component {
 SettingPageView.propTypes = {
   addFirstName: PropTypes.func,
   addLastName: PropTypes.func,
+  addBirthDate: PropTypes.func,
 
   lastName: PropTypes.string,
   firstName: PropTypes.string,
+  birthDate: PropTypes.string
 }
 
 export default SettingPageView

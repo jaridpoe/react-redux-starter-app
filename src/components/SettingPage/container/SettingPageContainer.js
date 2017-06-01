@@ -1,4 +1,4 @@
-import {addFirstName, addLastName} from '../redux/profileActions.js'
+import {addFirstName, addLastName, addBirthDate} from '../redux/profileActions.js'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import SettingPageView from '../views/SettingPageView.js'
@@ -6,7 +6,8 @@ import SettingPageView from '../views/SettingPageView.js'
 function mapStateToProps(state) {
   return {
     firstName: state.profile.firstName,
-    lastName: state.profile.lastName
+    lastName: state.profile.lastName,
+    birthDate: state.profile.birthDate
   }
 }
 
@@ -14,7 +15,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     addFirstName,
-    addLastName
+    addLastName,
+    addBirthDate
   }, dispatch)
 }
 

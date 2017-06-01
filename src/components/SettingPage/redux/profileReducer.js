@@ -11,7 +11,8 @@ import * as types from './profileActionTypes.js'
 
 const defaultProfile = {
   firstName: 'Jarid',
-  lastName: 'Poe'
+  lastName: 'Poe',
+  birthDate: '1990-02-02'
 }
 
 export function profile(state = defaultProfile, action) {
@@ -20,6 +21,8 @@ export function profile(state = defaultProfile, action) {
       return {...state, 'firstName': action.firstName}
     case types.MODIFY_LAST_NAME:
       return {...state, 'lastName': action.lastName}
+    case types.MODIFY_BIRTH_DATE:
+      return {...state, 'birthDate': action.birthDate}
     default:
       return state
   }

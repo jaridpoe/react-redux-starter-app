@@ -19,6 +19,10 @@ class HomePageView extends React.Component {
           Full name: {this.props.fullName}
         </p>
 
+        <p>
+          Birth date: {this.props.birthDate}
+        </p>
+
       </div>
     );
   }
@@ -27,7 +31,8 @@ class HomePageView extends React.Component {
 HomePageView.propTypes = {
   firstName: PropTypes.string,
   lastName: PropTypes.string,
-  fullName: PropTypes.string
+  fullName: PropTypes.string,
+  birthDate: PropTypes.string
 }
 
 
