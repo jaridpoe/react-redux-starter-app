@@ -18,3 +18,9 @@ export function addLastName(lastName) {
     type: types.MODIFY_LAST_NAME, lastName
   }
 }
+
+export function addBirthDate(birthDate) {
+  return {
+    type: types.MODIFY_BIRTH_DATE, birthDate
+  }
+}

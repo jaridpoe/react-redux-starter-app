@@ -6,7 +6,8 @@ function mapStateToProps(state) {
   return {
     firstName: state.profile.firstName,
     lastName: state.profile.lastName,
-    fullName: FullName(state) // selector
+    fullName: FullName(state), // selector
+    birthDate: state.profile.birthDate
   }
 }
 

@@ -3,9 +3,8 @@ import React, {PropTypes} from 'react';
 class HomePageView extends React.Component {
 
   render() {
-    ``
     return (
-      <div className="container-fluid">
+      <div className="col-md-12">
 
         <h1>Home</h1>
 
@@ -19,7 +18,12 @@ class HomePageView extends React.Component {
           Full name: {this.props.fullName}
         </p>
 
+        <p>
+          Birth date: {this.props.birthDate}
+        </p>
+
       </div>
+
     );
   }
 }
@@ -27,7 +31,8 @@ class HomePageView extends React.Component {
 HomePageView.propTypes = {
   firstName: PropTypes.string,
   lastName: PropTypes.string,
-  fullName: PropTypes.string
+  fullName: PropTypes.string,
+  birthDate: PropTypes.string
 }
 
 

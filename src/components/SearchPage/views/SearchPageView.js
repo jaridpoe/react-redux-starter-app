@@ -30,30 +30,28 @@ class SearchPageView extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-md-6">
+      <div>
+        <div className="col-md-6">
 
-            <h1> GitHub Search</h1>
-            <br />
+          <h1> GitHub Search</h1>
+          <br />
 
-            <form className="form-inline">
-              <FormInput id="gitHubUsername"
-                         placeholder="Enter username"
-                         type="text"
-                         label="GitHub Username: "
-                         value={this.state.gitHubUsername}
-                         onChange={this.handleChange}/>
+          <form className="form-inline">
+            <FormInput id="gitHubUsername"
+                       placeholder="Enter username"
+                       type="text"
+                       label="GitHub Username: "
+                       value={this.state.gitHubUsername}
+                       onChange={this.handleChange}/>
 
-              <Button bsStyle="default" onClick={this.handleSubmit}>Search</Button>
-            </form>
-          </div>
-
-          <div className="col-md-6">
-            <img src={this.props.gitHub.avatarUrl} className="img-thumbnail avatar-image center-block"/>
-          </div>
-
+            <Button bsStyle="default" onClick={this.handleSubmit}>Search</Button>
+          </form>
         </div>
+
+        <div className="col-md-6">
+          <img src={this.props.gitHub.avatarUrl} className="img-thumbnail avatar-image center-block"/>
+        </div>
+
       </div>
     );
   }
