@@ -4,9 +4,11 @@ import Navbar from './common/Navbar/views/NavbarView.js'
 class App extends React.Component {
   render() {
     return (
-      <div>
-        <Navbar />
-        {this.props.children}
+      <div className="container-fluid">
+        <div className="row">
+          <Navbar />
+          {this.props.children}
+        </div>
       </div>
     );
   }

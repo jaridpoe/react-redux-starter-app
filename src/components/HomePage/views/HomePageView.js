@@ -3,9 +3,8 @@ import React, {PropTypes} from 'react';
 class HomePageView extends React.Component {
 
   render() {
-    ``
     return (
-      <div className="container-fluid">
+      <div className="col-md-12">
 
         <h1>Home</h1>
 
@@ -24,6 +23,7 @@ class HomePageView extends React.Component {
         </p>
 
       </div>
+
     );
   }
 }

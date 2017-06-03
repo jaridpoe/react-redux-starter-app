@@ -40,8 +40,7 @@ class SettingPageView extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid">
-
+      <div className="col-md-12">
         <h1> User Profile</h1>
 
         <fieldset>
@@ -87,11 +86,10 @@ class SettingPageView extends React.Component {
                      required="required"/>
             </label>
 
-
             <br />
             <br />
 
-            <button className="form-control">
+            <button className="btn btn-default">
               <span className="glyphicon glyphicon-ok"/> Save
             </button>
           </form>
