@@ -21,7 +21,7 @@ class NavbarView extends React.Component {
         </Navbar.Header>
         <Nav>
 
-          <LinkContainer exact={true} to="/home">
+          <LinkContainer exact={true} to="/">
             <NavItem eventKey={1}>
               Home
             </NavItem>
@@ -38,7 +38,7 @@ class NavbarView extends React.Component {
               Settings
             </NavItem>
           </LinkContainer>
-          
+
         </Nav>
       </Navbar>
     )
