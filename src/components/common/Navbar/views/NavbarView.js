@@ -1,5 +1,9 @@
-import React, {PropTypes} from 'react'
-import {Link, IndexLink} from 'react-router'
+import React from 'react'
+import PropTypes from 'prop-types'
+
+import {LinkContainer} from 'react-router-bootstrap'
+import {Link, NavLink} from "react-router-dom"
+import {Nav, Navbar, NavItem} from "react-bootstrap"
 
 class NavbarView extends React.Component {
 
@@ -9,30 +13,38 @@ class NavbarView extends React.Component {
 
   render() {
     return (
-      <header>
-        <nav className="navbar navbar-inverse" id="navbarHeader">
-          <div className="container-fluid">
-            <div className="navbar-header">
-              <a className="navbar-brand title">React Starter</a>
-            </div>
+      <Navbar>
+        <Navbar.Header>
+          <Navbar.Brand>
+            React Starter
+          </Navbar.Brand>
+        </Navbar.Header>
+        <Nav>
 
-            <ul className="nav navbar-nav">
-              <li>
-                <IndexLink to="/" activeClassName="active">Home</IndexLink>
-              </li>
-              <li>
-                <IndexLink to="/search" activeClassName="active">Search</IndexLink>
-              </li>
-              <li>
-                <IndexLink to="/settings" activeClassName="active">Settings</IndexLink>
-              </li>
-            </ul>
+          <LinkContainer exact={true} to="/home">
+            <NavItem eventKey={1}>
+              Home
+            </NavItem>
+          </LinkContainer>
 
-          </div>
-        </nav>
-      </header>
+          <LinkContainer exact={true} to="/search">
+            <NavItem eventKey={2}>
+              Search
+            </NavItem>
+          </LinkContainer>
+
+          <LinkContainer exact={true} to="/settings">
+            <NavItem eventKey={3}>
+              Settings
+            </NavItem>
+          </LinkContainer>
+          
+        </Nav>
+      </Navbar>
     )
   }
 }
+
+NavbarView.propType = {}
 
 export default NavbarView
