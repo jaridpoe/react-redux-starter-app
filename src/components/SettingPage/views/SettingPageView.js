@@ -1,4 +1,5 @@
-import React, {PropTypes} from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 class SettingPageView extends React.Component {
 
@@ -45,9 +46,9 @@ class SettingPageView extends React.Component {
 
         <fieldset>
 
-          <lengend>
+          <div>
             <h3>Person Information</h3>
-          </lengend>
+          </div>
 
           <form onSubmit={this.handleSubmit}>
             <label>
@@ -74,8 +75,8 @@ class SettingPageView extends React.Component {
                      required="required"/>
             </label>
 
-            <br />
-            <br />
+            <br/>
+            <br/>
 
             <label>
               Birth date:
@@ -86,8 +87,8 @@ class SettingPageView extends React.Component {
                      required="required"/>
             </label>
 
-            <br />
-            <br />
+            <br/>
+            <br/>
 
             <button className="btn btn-default">
               <span className="glyphicon glyphicon-ok"/> Save
