@@ -1,35 +1,27 @@
 import React from 'react'
-import {
-  Route,
-  Switch
-} from 'react-router-dom'
+import PropTypes from 'prop-types'
 
-// Barreling from index file
-import {Navbar, NoPageFound} from './common'
-import {HomePage, SearchPage, SettingPage} from './index'
+import {NavBar, HomePage, SearchPage, SettingPage} from './../components'
+import {Route, Switch, Redirect} from "react-router-dom"
 
-/*
-React Router had dynamic routing which takes place during render, not as a configurable file outside like v3
- */
-
-const App = () => (
-  <div>
-    <Navbar/>
-    <div className="container-fluid">
-      <div className="row">
-
-        <Switch>
-          <Route exact path={`/`} component={HomePage}/>
-          <Route path={`/search`} component={SearchPage}/>
-          <Route path={`/settings`} component={SettingPage}/>
-          <Route component={NoPageFound}/>
-        </Switch>
-
+class App extends React.Component {
+  render() {
+    return (
+      <div className="container-fluid">
+        <div className="row">
+          <NavBar/>
+          <Switch>
+            <Route path={'/home'} component={HomePage} exact/>
+            <Route path={'/search'} component={SearchPage} exact/>
+            <Route path={'/settings'} component={SettingPage} exact/>
+            <Redirect from={'/'} to={'/home'}/>
+          </Switch>
+        </div>
       </div>
-    </div>
+    )
+  }
+}
 
-  </div>
-)
-
+App.propTypes = {}
 
 export default App
