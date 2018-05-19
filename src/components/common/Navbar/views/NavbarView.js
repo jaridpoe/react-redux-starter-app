@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import {LinkContainer} from 'react-router-bootstrap'
-import {Link, NavLink} from "react-router-dom"
+
 import {Nav, Navbar, NavItem} from "react-bootstrap"
 
 class NavbarView extends React.Component {
@@ -21,7 +21,7 @@ class NavbarView extends React.Component {
         </Navbar.Header>
         <Nav>
 
-          <LinkContainer exact={true} to="/">
+          <LinkContainer exact={true} to="/home">
             <NavItem eventKey={1}>
               Home
             </NavItem>
