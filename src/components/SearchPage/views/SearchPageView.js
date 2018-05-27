@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Button} from 'react-bootstrap'
 
-import {FormInput} from "../../common/"
+import {FormInput, Alert} from "../../common/"
+import {ALERT} from "../../common/Alert/ALERT_MESSAGE"
 
 class SearchPageView extends React.Component {
 
@@ -11,7 +12,13 @@ class SearchPageView extends React.Component {
     super(props);
 
     this.state = {
-      gitHubUsername: ''
+      gitHubUsername: '',
+      alert: {
+        title: '',
+        message: '',
+        show: false,
+        bsClass: ''
+      }
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -19,12 +26,14 @@ class SearchPageView extends React.Component {
   }
 
   render() {
+    const alert = this.state.alert
     return (
       <div>
         <div className="col-md-6">
 
           <h1> GitHub Search</h1>
-          <br/>
+
+          <Alert show={alert.show} bsClass={alert.bsClass} title={alert.title} message={alert.message}/>
 
           <form className="form-inline" onSubmit={this.handleSubmit}>
             <FormInput id="gitHubUsername"
@@ -34,7 +43,7 @@ class SearchPageView extends React.Component {
                        value={this.state.gitHubUsername}
                        onChange={this.handleChange}/>
 
-            <Button bsStyle="default">Search</Button>
+            <Button bsStyle="default" onClick={this.handleSubmit}>Search</Button>
           </form>
         </div>
 
@@ -51,11 +60,22 @@ class SearchPageView extends React.Component {
   }
 
   handleSubmit(event) {
-
     event.preventDefault()
-
     if (this.props.gitHubUsername !== this.state.gitHubUsername) {
-      this.props.searchGitHubAccount(this.state.gitHubUsername)
+      this.props.searchGitHubAccount(this.state.gitHubUsername).then(response => {
+        //successful -- show image
+        this.setState({alert: false})
+      }).catch(error => {
+        //failed -- show error message
+        this.setState({
+          alert: {
+            title: ALERT.title,
+            message: ALERT.message,
+            show: true,
+            bsClass: 'warning'
+          }
+        })
+      })
     }
   }
 

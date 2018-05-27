@@ -16,9 +16,13 @@ const defaultGitHub = {
 export function gitHubAccount(state = defaultGitHub, action) {
   switch (action.type) {
     case types.FETCH_GITHUB_SEARCH_SUCCESS:
-      return {...state, 'avatarUrl': action.gitHubAccount.data.avatar_url, 'statusText': action.gitHubAccount.statusText}
+      return {
+        ...state,
+        'avatarUrl': action.gitHubAccount.data.avatar_url,
+        'statusText': action.gitHubAccount.statusText
+      }
     case types.FETCH_GITHUB_SEARCH_FAILURE:
-      return {...state, 'statusText': action.error.response.statusText}
+      return defaultGitHub
     default:
       return state
   }
