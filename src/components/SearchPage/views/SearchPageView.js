@@ -12,23 +12,11 @@ class SearchPageView extends React.Component {
 
     this.state = {
       gitHubUsername: ''
-    };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleChange(event) {
-    this.setState({gitHubUsername: event.target.value})
-  }
-
-
-  handleSubmit() {
-    if (this.props.gitHubUsername !== this.state.gitHubUsername) {
-      this.props.searchGitHubAccount(this.state.gitHubUsername)
     }
-  }
 
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
 
   render() {
     return (
@@ -36,9 +24,9 @@ class SearchPageView extends React.Component {
         <div className="col-md-6">
 
           <h1> GitHub Search</h1>
-          <br />
+          <br/>
 
-          <form className="form-inline">
+          <form className="form-inline" onSubmit={this.handleSubmit}>
             <FormInput id="gitHubUsername"
                        placeholder="Enter username"
                        type="text"
@@ -46,7 +34,7 @@ class SearchPageView extends React.Component {
                        value={this.state.gitHubUsername}
                        onChange={this.handleChange}/>
 
-            <Button bsStyle="default" onClick={this.handleSubmit}>Search</Button>
+            <Button bsStyle="default">Search</Button>
           </form>
         </div>
 
@@ -55,8 +43,23 @@ class SearchPageView extends React.Component {
         </div>
 
       </div>
-    );
+    )
   }
+
+  handleChange(event) {
+    this.setState({gitHubUsername: event.target.value})
+  }
+
+  handleSubmit(event) {
+
+    event.preventDefault()
+
+    if (this.props.gitHubUsername !== this.state.gitHubUsername) {
+      this.props.searchGitHubAccount(this.state.gitHubUsername)
+    }
+  }
+
+
 }
 
 SearchPageView.propTypes = {
