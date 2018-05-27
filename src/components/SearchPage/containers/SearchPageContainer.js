@@ -1,4 +1,4 @@
-import {searchGitHubAccount} from '../redux/gitHubActions.js'
+import {searchGitHubAccount} from './../../../store/GitHub/gitHubActions'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import SearchPageView from '../views/SearchPageView.js'

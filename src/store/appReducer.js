@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux'
-import {profile} from '../components/SettingPage/redux/profileReducer.js'
-import {gitHubAccount} from '../components/SearchPage/redux/gitHubReducer.js'
+import {profile} from './Profile/profileReducer'
+import {gitHubAccount} from './GitHub/gitHubReducer'
 
 const appReducer = combineReducers({
   profile,

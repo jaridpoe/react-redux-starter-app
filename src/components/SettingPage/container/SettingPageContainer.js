@@ -1,4 +1,4 @@
-import {addFirstName, addLastName, addBirthDate} from '../redux/profileActions.js'
+import {addFirstName, addLastName, addBirthDate} from './../../../store/Profile/profileActions'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 import SettingPageView from '../views/SettingPageView.js'
