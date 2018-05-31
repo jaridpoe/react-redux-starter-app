@@ -1,31 +1,32 @@
-import webpack from 'webpack';
-import path from 'path';
+const webpack = require('webpack');
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
+  mode: 'development',
   entry: [
-    'webpack-hot-middleware/client?reload=true', //note that it reloads the page if hot module reloading fails.
-    path.resolve(__dirname, 'src/index')
-  ],
+    'react-hot-loader/patch',
+    './src/index.js'],
   target: 'web',
   output: {
     path: __dirname + '/dist', // Note: Physical files are only output by the production build task `npm run build`.
     publicPath: '/',
     filename: 'bundle.js'
   },
-  devServer: {
-    contentBase: path.resolve(__dirname, 'src'),
-    historyApiFallback: true
-  },
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
+  devServer: {
+    contentBase: './src',
+    hot: true
+  },
   module: {
     rules: [
-      {test: /\.js$/, exclude: [/node_modules/], use: 'babel-loader'},
+      {test: /\.(js|jsx)$/, exclude: /node_modules/, use: ['babel-loader']},
       {test: /(\.css)$/, use: ['style-loader', 'css-loader']},
       {test: /\.eot$|\.svg$|\.woff$|\.woff2|.ttf$/, use: 'url-loader'}
     ]
+  },
+  resolve: {
+    extensions: ['*', '.js', '.jsx']
   }
-};
-
+}

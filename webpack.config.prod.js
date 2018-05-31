@@ -8,6 +8,7 @@ const GLOBALS = {
 
 module.exports = {
   devtool: 'source-map', // production source map
+  mode: 'production',
   entry: './src/index',
   target: 'web',
   output: {

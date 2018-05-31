@@ -1,5 +1,4 @@
 import {createStore, applyMiddleware, compose} from 'redux';
-import reduxImmutableStateInvariant from 'redux-immutable-state-invariant';
 import thunk from 'redux-thunk';
 import appReducer from './appReducer.js';
 
@@ -9,7 +8,6 @@ The store holds the whole state tree. Think of the store as a pie chart and each
 
  */
 
-
 export default function configureStore() {
 
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -17,7 +15,7 @@ export default function configureStore() {
   return createStore(
     appReducer,
     composeEnhancers(
-      applyMiddleware(thunk, reduxImmutableStateInvariant())
+      applyMiddleware(thunk)
     )
   )
 }
