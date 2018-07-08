@@ -7,13 +7,9 @@ How to set up the project:
 #1 Install Node Packages by running 'npm install' (on the root directory where package.json is).
 
 
-#2 To run development mode: type 'npm start -s'
+#2 To run development mode: type 'npm run dev'
 Development includes hot reloading and other helpful development tools.
 
 
-#3 To run production mode: type 'npm run build -s'
+#3 To run production mode: type 'npm run build'
 Production will remove hot reloading, minifies javascript, and other optimizations.
-
-
-
-Note: The -s flag is optional. It enables silent mode which suppresses unnecessary messages during the build.
