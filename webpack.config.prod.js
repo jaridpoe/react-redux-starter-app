@@ -1,6 +1,8 @@
-import webpack from 'webpack';
-import ExtractTextPlugin from 'extract-text-webpack-plugin'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
+const webpack = require('webpack');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin")
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   devtool: 'source-map', // production source map
@@ -12,22 +14,36 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js'
   },
-  devServer: {
-    contentBase: './dist'
-  },
   plugins: [
-    new ExtractTextPlugin('styles.css'), //extracts our css to a separate file
-    new webpack.optimize.UglifyJsPlugin, // minifies our javascript
+    new MiniCssExtractPlugin({
+      filename: "styles.css"
+    }),
     new HtmlWebpackPlugin({
       filename: './index.html',
       template: './src/index.template.ejs'
 
     })
   ],
+  optimization: {
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true // set to true if you want JS source maps
+      }),
+      new OptimizeCSSAssetsPlugin({})
+    ]
+  },
   module: {
     rules: [
       {test: /\.js$/, exclude: [/node_modules/], use: 'babel-loader'},
-      {test: /\.css$/, use: ExtractTextPlugin.extract({fallback: "style-loader", use: "css-loader"})},
+      {
+        test: /\.css$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader'
+        ]
+      },
       {test: /\.eot$|\.svg$|\.woff$|\.woff2|.ttf$/, use: 'url-loader'}
     ]
   }
