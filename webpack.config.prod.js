@@ -2,14 +2,10 @@ import webpack from 'webpack';
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
-const GLOBALS = {
-  'process.env.NODE_ENV': JSON.stringify('production')
-}
-
 module.exports = {
   devtool: 'source-map', // production source map
-  mode: 'production',
   entry: './src/index',
+  mode: 'production',
   target: 'web',
   output: {
     path: __dirname + '/dist',
@@ -20,12 +16,11 @@ module.exports = {
     contentBase: './dist'
   },
   plugins: [
-    new webpack.DefinePlugin(GLOBALS), //sets react for production for performance reasons
     new ExtractTextPlugin('styles.css'), //extracts our css to a separate file
     new webpack.optimize.UglifyJsPlugin, // minifies our javascript
     new HtmlWebpackPlugin({
       filename: './index.html',
-      template: './src/tools/index.template.ejs'
+      template: './src/index.template.ejs'
 
     })
   ],
@@ -36,4 +31,4 @@ module.exports = {
       {test: /\.eot$|\.svg$|\.woff$|\.woff2|.ttf$/, use: 'url-loader'}
     ]
   }
-};
+}

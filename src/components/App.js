@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { hot } from 'react-hot-loader'
 
 import {NavBar, HomePage, SearchPage, SettingPage} from './../components'
 import {Route, Switch, Redirect} from "react-router-dom"
@@ -24,4 +24,4 @@ class App extends React.Component {
 
 App.propTypes = {}
 
-export default App
+export default hot(module)(App)
